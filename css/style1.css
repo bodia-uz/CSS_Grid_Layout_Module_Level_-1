@@ -10,15 +10,18 @@
 						 "footer    footer";
 }
 #title{
-	grid-column-start: banner-start;
-	grid-column-end:  banner-end;
+	/*grid-column-start: banner-start;
+	grid-column-end:  banner-end;*/
+	grid-column-start:1;
+	grid-column-end:  3;
 	grid-row-start: header-top;
 	grid-row-end: header-bottom;
 	background-color: #aa6
 }
 #nav{
-	grid-row-start: main-top;
-	grid-row-end: main-bottom;
+	/*grid-row-start: main-top;
+	grid-row-end: main-bottom;*/
+	grid-row: 2;
 	background-color: #a66
 }
 #board{

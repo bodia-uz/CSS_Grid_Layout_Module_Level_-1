@@ -1,0 +1,27 @@
+#grid{
+	display: grid;
+	grid-template-columns:
+		[start] auto
+		[track-start] 0.5fr
+		[thumb-start] auto
+		[fill-split] auto
+		[thumb-end] 0.5fr
+		[track-end]    auto
+    	[end];
+
+}
+#lower-label { grid-column-start: start }
+#track       { grid-column: track-start / track-end; justify-self: center }
+#upper-label { grid-column-end: end; }
+
+
+/* Fill parts are drawn above the track so set z-index to 5. */
+#lower-fill  { grid-column: track-start / fill-split;
+               justify-self: end;
+               z-index: 5 }
+#upper-fill  { grid-column: fill-split / track-end;
+               justify-self: start;
+               z-index: 5 }
+
+/* Thumb is the topmost part; assign it the highest z-index value. */
+#thumb       { grid-column: thumb-start / thumb-end; z-index: 10 }
