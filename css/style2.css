@@ -1,27 +1,42 @@
-#grid{
-	display: grid;
-	grid-template-columns:
-		[start] auto
-		[track-start] 0.5fr
-		[thumb-start] auto
-		[fill-split] auto
-		[thumb-end] 0.5fr
-		[track-end]    auto
-    	[end];
-
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 600px;
+  height: 600px;
 }
-#lower-label { grid-column-start: start }
-#track       { grid-column: track-start / track-end; justify-self: center }
-#upper-label { grid-column-end: end; }
-
-
-/* Fill parts are drawn above the track so set z-index to 5. */
-#lower-fill  { grid-column: track-start / fill-split;
-               justify-self: end;
-               z-index: 5 }
-#upper-fill  { grid-column: fill-split / track-end;
-               justify-self: start;
-               z-index: 5 }
-
-/* Thumb is the topmost part; assign it the highest z-index value. */
-#thumb       { grid-column: thumb-start / thumb-end; z-index: 10 }
+#A { 
+	grid-column: 1 / span 2; 
+	grid-row: 2; 
+	align-self: end;
+	background-color: #E2C50D;
+}
+#B { grid-column: 1; 
+	grid-row: 1; 
+	z-index: 10;
+	background-color: #6b1124; 
+}
+#C{ 
+	grid-column: 2;
+	grid-row: 1; 
+	align-self: start; 
+	margin-left: -20px; 
+	background-color: #297bbc;
+	z-index: 11;
+}
+#D{ 
+	grid-column: 2; 
+	grid-row: 2; 
+	justify-self: end; 
+	align-self: start;
+	background-color: #108310;
+	padding: 100px; 
+}
+#E { grid-column: 1 / span 2; 
+	grid-row: 1 / span 2;
+     z-index: 5; 
+     justify-self: center; 
+     align-self: center;
+     background-color: #999;
+     padding: 20px; 
+ }
