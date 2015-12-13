@@ -1,0 +1,49 @@
+<style>
+  #grid {
+    display: grid;
+  
+    /* Two columns: the first sized to content, the second receives
+     * the remaining space, but is never smaller than the minimum
+     * size of the board or the game controls, which occupy this
+     * column. */
+    grid-template-columns: auto minmax(min-content, 1fr);
+  
+    /* Three rows: the first and last sized to content, the middle
+     * row receives the remaining space, but is never smaller than
+     * the minimum height of the board or stats areas. */
+    grid-template-rows: auto minmax(min-content, 1fr) auto
+  }
+  
+  /* Each part of the game is positioned between grid lines by
+   * referencing the starting grid line and then specifying, if more
+   * than one, the number of rows or columns spanned to determine
+   * the ending grid line, which establishes bounds for the part. */
+  #title    { grid-column: 1; grid-row: 1; background-color: green; }
+  #score    { grid-column: 1; grid-row: 3; background-color: grey; }
+  #stats    { grid-column: 1; grid-row: 2; align-self: start ; background-color: blue; }
+  #board    { grid-column: 2; grid-row: 1 / span 2; background-color: yellow; }
+  #controls { grid-column: 2; grid-row: 3; justify-self: center; background-color: orange; }
+</style>
+<div id="grid">
+  <div id="title">Game Title</div>
+  <div id="score">Score</div>
+  <div id="stats">Stats</div>
+  <div id="board">
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra lectus eget mauris lacinia elementum. Etiam rhoncus, sapien et porta bibendum, velit risus euismod odio, non iaculis eros tellus vel est. Nam non euismod arcu, non tempor arcu. Proin ullamcorper a tellus in pellentesque. Aenean auctor tellus quis libero accumsan, et ullamcorper massa imperdiet. Vivamus hendrerit euismod urna, vel volutpat lectus vestibulum eu. Aliquam sed lacus ut orci auctor lobortis at vel purus. Praesent tincidunt arcu sit amet mi pellentesque bibendum. Pellentesque nec metus sagittis, luctus velit quis, egestas leo. Sed luctus libero lacus. Phasellus id tempor tortor, sed luctus ligula. Fusce ut tincidunt lacus.
+    </p>
+    <p>
+    Nunc sit amet tempus nibh. Sed gravida, dolor ut eleifend lobortis, diam purus finibus turpis, dignissim rutrum mi velit vitae sapien. Cras id augue nec orci condimentum interdum. Praesent ornare massa ut convallis sollicitudin. Ut sit amet urna quis arcu venenatis iaculis eget id est. Suspendisse vitae dolor nec quam dictum ullamcorper vel at urna. Morbi sed porttitor libero. Fusce pellentesque auctor lacus. Nunc id euismod elit, ut auctor dolor. Vestibulum vitae metus consectetur, faucibus sapien vitae, egestas magna. Suspendisse libero libero, cursus at mollis auctor, lobortis eu orci. Fusce eget mauris rhoncus, tempor lorem ac, pretium urna. Curabitur id ipsum mattis, gravida massa ut, sagittis dolor. Nulla quis fringilla nunc. Quisque semper pellentesque vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+    </p>
+    <p>
+    Sed sollicitudin, ipsum vel tincidunt porttitor, enim odio finibus lorem, at auctor velit metus sed eros. Ut tellus risus, iaculis pretium egestas vitae, egestas non enim. Fusce ut magna et leo pulvinar congue fringilla sed dolor. Curabitur vel pretium ante. Nullam odio ligula, porta vel mi nec, pellentesque ultrices nibh. Duis gravida rhoncus pulvinar. Pellentesque non turpis vehicula nibh eleifend placerat. Ut non turpis tincidunt, euismod purus at, cursus massa. Suspendisse vel viverra erat, id mollis sem. Morbi bibendum dolor at lacinia finibus. Nullam accumsan nulla orci, ac tristique quam ornare quis.
+    </p>
+    <p>
+    Nunc laoreet placerat tortor eu ultrices. Etiam et neque vitae ligula efficitur maximus. Duis pellentesque ligula metus, ut porta nibh finibus sit amet. Nulla vel auctor augue. Cras vitae tempor orci, vel venenatis tortor. Ut et mi a mi ultrices malesuada tempor at sem. Donec rhoncus erat est. Phasellus cursus lacus vitae tincidunt varius. Proin sed semper velit, id viverra diam. Proin tempus, erat eget consequat elementum, leo justo suscipit mi, quis varius nisl nibh eget erat. Sed felis dui, iaculis rhoncus justo ut, ullamcorper volutpat quam.
+    </p>
+    <p>
+    Vestibulum nec gravida orci. Morbi diam neque, tincidunt non auctor et, bibendum et ligula. Vivamus iaculis orci at purus blandit sollicitudin sed sed nisl. Aliquam erat volutpat. Donec id finibus ante. Vivamus tempor massa ac sem condimentum maximus. Sed a cursus tortor. Quisque volutpat posuere justo sed posuere. Praesent vehicula nunc accumsan purus tincidunt accumsan. Pellentesque vel magna luctus, pretium nunc ut, efficitur est. Mauris tincidunt luctus bibendum. Ut ut dui ut ante interdum scelerisque fermentum at metus. Nunc lacinia sagittis fringilla. Integer eu faucibus augue.
+    </p>
+  </div>
+  <div id="controls">Controls</div>
+</div>
